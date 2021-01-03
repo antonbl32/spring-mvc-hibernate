@@ -19,7 +19,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     @Transactional //спринг сам контролирует открытие и закрытие транзакции
     public List<Employee> getAllEmployees() {
-
         Session session=sessionFactory.getCurrentSession();
 //        List<Employee> allEmploees=session.createQuery("from Employee ", Employee.class).getResultList();
         Query<Employee> query=session.createQuery("from Employee ", Employee.class);
@@ -28,4 +27,17 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return allEmployees;
 
     }
+
+
+//    @Transactional //спринг сам контролирует открытие и закрытие транзакции
+//    public Employee getEmployeeById(int id) {
+//        Session session=sessionFactory.getCurrentSession();
+////        List<Employee> allEmploees=session.createQuery("from Employee ", Employee.class).getResultList();
+//        Query<Employee> query=session.createQuery("from Employee ",id);
+//        List<Employee> allEmployees = query.getResultList();
+//
+//        return allEmployees;
+//
+//    }
+
 }
