@@ -17,7 +17,7 @@
             <th>Surname</th>
             <th>Department</th>
             <th>Salary</th>
-
+            <th>Action</th>
         </tr>
         <c:forEach var="emp" items="${allEmps}">
         <tr>
@@ -25,6 +25,7 @@
             <td>${emp.surname}</td>
             <td>${emp.department}</td>
             <td>${emp.salary}</td>
+            <td><button formaction="/update">Update</button> </td>
         </tr>
 
 

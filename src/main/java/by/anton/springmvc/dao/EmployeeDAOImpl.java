@@ -28,4 +28,16 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return allEmployees;
 
     }
+
+
+    public Employee getEmployeeById(int id) {
+
+        Session session=sessionFactory.getCurrentSession();
+//        List<Employee> allEmploees=session.createQuery("from Employee ", Employee.class).getResultList();
+        Employee query=session.get(Employee.class,id);
+
+        return query;
+
+    }
+
 }
