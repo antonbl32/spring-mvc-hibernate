@@ -29,6 +29,24 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     }
 
+    @Override
+    public void saveEmployee(Employee employee) {
+        Session session=sessionFactory.getCurrentSession();
+        session.saveOrUpdate(employee);
+    }
+
+//    @Override
+//    public void updateEmployee(Employee employee) {
+//        Session session=sessionFactory.getCurrentSession();
+//        session.saveOrUpdate(employee);
+//    }
+
+    @Override
+    public void deleteEmployee(Employee employee) {
+        Session session=sessionFactory.getCurrentSession();
+        session.delete(employee);
+    }
+
 
     public Employee getEmployeeById(int id) {
 
